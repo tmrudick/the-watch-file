@@ -1,0 +1,20 @@
+{
+  "name": "TheWatcher",
+  "version": "0.0.0",
+  "description": "Watches for changes in a file and rsyncs changes to remote machines",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmrudick/the-watch-file"
+  },
+  "author": "Tom Rudick <tmrudick@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-rsync": "~0.1.1",
+    "grunt-contrib-watch": "~0.4.4"
+  }
+}

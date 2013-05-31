@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var grunt = require('grunt');
+
+if (process.argv.length === 3) {
+    var project = process.argv[2];
+
+    grunt.tasks(['sync'], {
+        project: project,
+        gruntfile: './Gruntfile.js'
+    });
+} else {
+    var fs = require('fs');
+    var path = require('path');
+
+    var test_dir = process.cwd();
+
+    var watch_file = null;
+    while (test_dir != '/') {
+        var test_file = path.join(test_dir, '.watchfile');
+        if (fs.existsSync(test_file)) {
+            watch_file = test_file;
+            break;
+        } else {
+            test_dir = path.dirname(test_dir);
+        }
+    }
+
+    if (watch_file) {
+        console.log('Touching watchfile: ' + watch_file);
+        fs.utimesSync(test_file, new Date(), new Date());
+    } else {
+        console.log('Could not find watchfile!');
+    }
+}
