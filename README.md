@@ -10,11 +10,12 @@ Installation
     cd the-watch-file
     make watch
     sudo npm install -g grunt-cli
+    npm install
 
 Running
 --------------
 
 * Create an empty file called .watchfile in the root of your Sublime Text project
-* Update Gruntfile resync config object and add your server and project paths
+* Update Gruntfile rsync config object and add your server and project paths
 * Run grunt/sync project_name
 * Save stuff in Sublime Text and it will be synced
